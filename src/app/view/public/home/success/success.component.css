@@ -1,0 +1,55 @@
+.alerta.concluido {
+    background-color: #00C541;
+}
+
+.alerta {
+    width: 100%;
+    min-height: 80px;
+    position: relative;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.mensagem-boleto {
+    margin: 50px 0;
+    text-align: center;
+    color: #A8B1BE;
+}
+
+.alerta-mensagem {
+    font-size: 20px;
+    text-align: center;
+}
+
+.mensagem-boleto p {
+    font-size: 16px;
+    max-width: 900px;
+    margin: 5px auto;
+}
+
+.conteudo {
+    padding: 20px;
+}
+
+.conteudo01 {
+    padding: 20px;
+}
+
+.texto-conteudo {
+
+    font-size: 14px;
+    padding: 10px;
+    text-align: center;
+}
+
+.cinza {
+    background-color: #656565;
+    background-repeat: repeat-x;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+    color: #FFFFFF;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+}

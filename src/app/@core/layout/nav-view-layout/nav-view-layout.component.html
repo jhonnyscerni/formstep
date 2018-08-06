@@ -1,0 +1,27 @@
+<td-layout-nav color="primary" navigationRoute="/">
+
+  <div td-toolbar-content layout="row" layout-align="center center" flex>
+
+    <div style="display: inherit;">
+      <img [routerLink]="['/']" src="assets/imagens/je-mini-logo-white.png" class="je-logo" style="width: 48px; height: 48px; margin-right: 10px;margin-top: 4px; cursor: pointer;">
+      <div fxLayout="column">
+        <span [routerLink]="['/']" style="cursor: pointer; font-size: 16px">
+          <!-- {{ recursoTypeLabel }} -->
+          Tribunal Regional Eleitoral do Pará
+        </span>
+        <h3 class="md-subhead">
+          Mesário Voluntário
+        </h3>
+      </div>
+    </div>
+
+    <!-- TOOLBAR CONTENT -->
+    <!-- <ng-content select="[toolbar-content]"></ng-content> -->
+    <span flex></span>
+    <app-menu-layout></app-menu-layout>
+  </div>
+  <!--MAIN CONTENT -->
+  <ng-content select="[main-content]"></ng-content>
+  <td-layout-footer color="primary" *ngIf="isFooter">
+  </td-layout-footer>
+</td-layout-nav>

@@ -1,0 +1,142 @@
+<div main-content layout="row" layout-align="center start">
+
+  <mat-card flex-gt-xs="90" flex="100" tdMediaToggle="gt-xs" [mediaClasses]="['push']">
+    <mat-card-content>
+      <div fxLayout="column">
+
+        <div class="actions">
+          <ul>
+
+
+          </ul>
+        </div>
+
+
+
+        <div class="page-preview" id="print-section">
+          <div class="alerta concluido">
+            <div class="alerta-mensagem">
+              Cadastro realizada com sucesso!
+              <i class="fa fa-check-circle"></i>
+            </div>
+            <!--   <div class="n-inscricao">
+              <span class="n-inscricao-title">Nº do Titulo Eleitoral</span>
+              <span class="n-inscricao-id">{{mesario?.tituloEleitoral}}</span>
+            </div> -->
+          </div>
+
+          <!--     <div class="mensagem-boleto">
+            <p>Informações</p>
+          </div> -->
+
+
+          <hr style="height:2px; border:none; color:#000; background-color:#000; margin-top: 0px; margin-bottom: 0px;"/>
+
+
+          <div class="conteudo01">
+
+            <div class="texto-conteudo">
+              <strong>Zona Eleitoral: </strong>
+              <span>{{mesario?.zonaEleitoral}}</span>
+            </div>
+
+     <!--       <div class="texto-conteudo">
+              <strong>Seção Eleitoral: </strong>
+              <span>{{mesario?.secaoEleitoral}}</span>
+            </div>
+
+
+            <div class="texto-conteudo">
+              <strong>Local de Votação: </strong>
+              <span>{{mesario?.localVotacao}}</span>
+            </div>
+
+
+            <div class="texto-conteudo">
+              <strong>Nº Local de Votação: </strong>
+              <span>{{mesario?.numlocalVotacao}}</span>
+            </div> -->
+
+
+          </div>
+
+
+          <hr style="height:2px; border:none; color:#000; background-color:#000; margin-top: 0px; margin-bottom: 0px;"/>
+
+          <div class="conteudo">
+
+            <div class="texto-conteudo">
+              <strong>Nº do Titulo Eleitoral: </strong>
+              <span>{{mesario?.tituloEleitoral}}</span>
+            </div>
+
+            <div class="texto-conteudo">
+              <strong>Nome Completo: </strong>{{mesario?.nomeCompleto}} </div>
+            <div class="texto-conteudo">
+              <strong>Nome Mãe: </strong>{{mesario?.nomeMae}} </div>
+            <div class="texto-conteudo">
+              <strong>E-mail: </strong>{{mesario?.email}} </div>
+            <div class="texto-conteudo">
+              <strong>Data de Nascimento: </strong>{{dateLayout(mesario?.nascimento)}} </div>
+            <div class="texto-conteudo">
+              <strong>Grau de Instrução: </strong>{{mesario?.grauInstrucao}} </div>
+            <div class="texto-conteudo">
+              <strong>Já Trabalhou como Mesário? </strong> 
+              <div *ngIf="mesario?.trabalhouMesario == true">SIM</div> 
+              <div *ngIf="mesario?.trabalhouMesario == false">NÃO </div>
+            </div>
+            <div class="texto-conteudo">
+              <strong>Portador de Necessidades Especiais? </strong> 
+              <div *ngIf="mesario?.necessidadeEspeciais == true">SIM</div> 
+              <div *ngIf="mesario?.necessidadeEspeciais == false">NÃO </div>
+            </div>
+            <div class="texto-conteudo">
+              <strong>Bairro: </strong>{{mesario?.bairro}} </div>
+            <div class="texto-conteudo">
+              <strong>Município: </strong>{{mesario?.municipio}} </div>
+            <div class="texto-conteudo">
+              <strong>Endereço: </strong>{{mesario?.endereco}} </div>
+            <div class="texto-conteudo">
+              <strong>Complemento do Endereço: </strong>{{mesario?.complementoEndereco}} </div>
+            <div class="texto-conteudo">
+              <strong>Informações de Referência: </strong>{{mesario?.informacoesReferenciaEndereco}} </div>
+            <div class="texto-conteudo">
+              <strong>CEP: </strong>{{mesario?.cep}} </div>
+            <div class="texto-conteudo">
+              <strong>Telefone: </strong>{{mesario?.telefone}} </div>
+            <div class="texto-conteudo">
+              <strong>Celular: </strong>{{mesario?.celular}} </div>
+            <div class="texto-conteudo">
+              <strong>Você é Funcionário Público? </strong> 
+              <div *ngIf="mesario?.servidorPublico == true">SIM</div> 
+              <div *ngIf="mesario?.servidorPublico == false">NÃO </div>
+            </div>
+            <div class="texto-conteudo">
+              <strong>Possui Experiência com Informática? </strong>
+              <div *ngIf="mesario?.possuiExperienciaInformatica == true">SIM</div> 
+              <div *ngIf="mesario?.possuiExperienciaInformatica == false">NÃO </div>
+            </div>
+            <div class="texto-conteudo">
+              <strong>Nome da Empresa, Órgão ou Instituição em que Trabalha: </strong>{{mesario?.localTrabalho}} </div>
+            <div class="texto-conteudo">
+              <strong>Endereço Comercial: </strong>{{mesario?.enderecoTrabalho}} </div>
+            <div class="texto-conteudo">
+              <strong>Data de Inscrição: </strong>{{dateLayout(mesario?.dataInscricao)}} </div>
+
+          </div>
+
+        </div>
+
+
+        <div fxLayout="column">
+          <mat-card-actions style="text-align: center">
+            <a mat-button class="cinza" [routerLink]="['']">FECHAR</a>
+          </mat-card-actions>
+        </div>
+
+
+
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

@@ -1,0 +1,132 @@
+li {
+    margin-bottom: 10px;
+    text-align: justify;
+    padding-right: 20px;
+    font-family: monospace;
+}
+
+span {
+    padding: 0 auto;
+    margin-bottom: 10px;
+    font-weight: 300;
+}
+
+.td-steps-noshadow {
+    -webkit-box-shadow: none !important;
+	-moz-box-shadow: none !important;
+	box-shadow: none !important;
+}
+
+.mat-card.edit-card > .mat-card-title {
+    @media (max-width: 700px) {
+        font-size: 18px;
+        text-align: center;
+        }
+}
+
+.mat-input-element:disabled {
+    font-weight: bold;
+}
+
+.mat-slide-toggle {
+    margin-top: 15px;
+}
+
+label {
+    font-size: 18px !important;
+}
+
+h3 {
+        padding: 0 !important;
+}
+
+/* EDU: define quando um item da lista está ativo, com uma cor diferente */
+.link {
+    /* tira o mouse de drag-and-drop e coloca o ponteiro de link no título do card */
+    cursor: pointer;
+}
+
+.link:hover {
+    /* deixa o texto do link com linha em baixo quando o usuário passa o mouse em cima */
+    text-decoration: underline;
+}
+
+.mat-card-content {
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-bottom: 10px !important;
+}
+
+
+.mat-card-subtitle {
+    margin-top: 5px !important;
+    margin-left: 0px !important;
+    padding-left: 0px !important;
+}
+
+.mat-card-title a {
+    text-shadow: 0 0 8px #bbb;
+    font-size: 80%;
+}
+
+.mat-card-title {
+    margin-bottom: 0px !important;
+}
+.mat-card-title {
+    background: #1976d2;
+    color: white;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    padding-bottom: 10px;
+    font-size: 22px;
+   }
+
+.action-button {
+    margin-top: 10px !important;
+}
+
+.mat-icon {
+    vertical-align: middle;
+    margin-top: -4px !important;
+}
+
+p {
+    line-height: 24px;
+}
+
+h2, h3 {
+    margin-left: 8px;
+    margin-top: 5px;  
+}
+
+.mat-subheader {
+    margin-left: 0px !important;
+}
+
+h4 {
+    margin-left: 8px;
+    font-style: italic; 
+    font-weight: 100;
+    margin-top: -17px;  
+}
+
+/* corrige a largura dos campos separados por fxFlex=% pois alguns não respeitam o tamanho total da coluna */
+.fullwidth {
+    width: 100% !important;
+}
+
+/* para chips que representam siglas, tem que estar em maiúsculo */
+.uppercase {
+    text-transform: uppercase;
+}
+
+/* separa os chips quando estão em mais de uma linha */
+.mat-chip {
+    margin-top: 2px !important;
+}
+
+.zonaEleitoralLabel
+{
+    padding-bottom: 10px;
+}
+
