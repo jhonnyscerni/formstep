@@ -16,7 +16,7 @@
         <div class="page-preview" id="print-section">
           <div class="alerta concluido">
             <div class="alerta-mensagem">
-              Cadastro realizada com sucesso!
+              Cadastro realizado com sucesso!
               <i class="fa fa-check-circle"></i>
             </div>
             <!--   <div class="n-inscricao">
@@ -36,8 +36,11 @@
           <div class="conteudo01">
 
             <div class="texto-conteudo">
-              <strong>Zona Eleitoral: </strong>
-              <span>{{mesario?.zonaEleitoral}}</span>
+              <strong>Zona Eleitoral: </strong><span>{{mesario?.zonaEleitoral}}</span>
+              <br/>
+              <span>A confirmação do seu cadastro foi enviada para o e-mail {{mesario?.email}}</span>
+              <br/>
+              <span>Caso deseje, você pode imprimir ou salvar esta página.</span>
             </div>
 
      <!--       <div class="texto-conteudo">
@@ -66,14 +69,14 @@
           <div class="conteudo">
 
             <div class="texto-conteudo">
-              <strong>Nº do Titulo Eleitoral: </strong>
+              <strong>Nº do Título Eleitoral: </strong>
               <span>{{mesario?.tituloEleitoral}}</span>
             </div>
 
             <div class="texto-conteudo">
               <strong>Nome Completo: </strong>{{mesario?.nomeCompleto}} </div>
             <div class="texto-conteudo">
-              <strong>Nome Mãe: </strong>{{mesario?.nomeMae}} </div>
+              <strong>Nome da Mãe: </strong>{{mesario?.nomeMae}} </div>
             <div class="texto-conteudo">
               <strong>E-mail: </strong>{{mesario?.email}} </div>
             <div class="texto-conteudo">

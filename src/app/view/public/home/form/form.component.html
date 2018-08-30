@@ -2,13 +2,12 @@
 
   <mat-card flex-gt-xs="80" flex="100" tdMediaToggle="gt-xs" [mediaClasses]="['push']">
     <mat-card-title class="background-color-primary list-card fullwidth" fxLayout="row">
-      <div flex>
-        <!-- <mat-icon>list</mat-icon>  -->
-        Formulário de Cadastro do Mesário
-      </div>
+      <span hide-xs hide-gt-xs show-gt-sm> Formulários para&nbsp; </span>
+      <span> Mesário Voluntário </span>
+      <span hide-xs hide-gt-xs show-gt-sm> &nbsp;do TRE-PA </span>
     </mat-card-title>
     <mat-divider></mat-divider>
-     {{mesario | json}}
+     <!-- {{mesario | json}} -->
     <mat-card-content>
       <!-- FORMULÁRIO -->
 
@@ -16,7 +15,7 @@
         <td-step #stepDadosPessoais label="Dados Pessoais" [state]="stepDadosPessoaisState" [active]="stepDadosPessoaisActive" [disabled]="!stepDadosPessoaisEnabled"></td-step>
         <td-step #stepDadosResidenciais label="Dados Residenciais" [state]="stepDadosResidenciaisState" [active]="stepDadosResidenciaisActive"
           [disabled]="!stepDadosResidenciaisEnabled"></td-step>
-        <td-step #stepDadosResidenciais label="Dados Profissicionais" [state]="stepDadosProfissionaisState" [active]="stepDadosProfissionaisActive"
+        <td-step #stepDadosResidenciais label="Dados Profissionais" [state]="stepDadosProfissionaisState" [active]="stepDadosProfissionaisActive"
           [disabled]="!stepDadosProfissionaisEnabled"></td-step>
       </td-steps>
 
@@ -25,19 +24,17 @@
 
         <div fxLayout="column" *ngIf="stepDadosPessoaisEnabled" id="formDadosPessoais">
 
-          <h3 matSubheader>Dados Pessoais</h3>
+          <!-- <h3 matSubheader>Dados Pessoais</h3> -->
           <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="20px" fxLayoutGap.xs="0px">
             <mat-input-container floatPlaceholder="auto" fxFlex="49">
-              <input required #tituloEleitoral="ngModel" (blur)="onBlurMethod()" mask="000000000000" matInput name="tituloEleitoral" [(ngModel)]="mesario.tituloEleitoral" type="text"
+              <input required #tituloEleitoral="ngModel" (blur)="onBlurMethodTitulo()" mask="000000000000" matInput name="tituloEleitoral" [(ngModel)]="mesario.tituloEleitoral" type="text"
                 placeholder="Título Eleitoral">
               <mat-error [hidden]="tituloEleitoral.valid || (tituloEleitoral.pristine && !vform.submitted)">
-                O Titulo Eleitoral é um campo obrigatório
+                  {{getTituloErrorMsg()}}
               </mat-error>
-
             </mat-input-container>
           </div>
-
-          <div *ngIf="mesario.zonaEleitoral" class="zonaEleitoralLabel"> <strong>Zona Eleitoral:  {{mesario.zonaEleitoral}}</strong> </div>
+          <!-- <div *ngIf="mesario.zonaEleitoral" class="zonaEleitoralLabel"> <strong>Zona Eleitoral:  {{mesario.zonaEleitoral}}</strong> </div> -->
 
           <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="20px" fxLayoutGap.xs="0px">
             <mat-input-container floatPlaceholder="auto" fxFlex="50">
@@ -57,26 +54,26 @@
           </div>
 
           <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="20px" fxLayoutGap.xs="0px">
-            <mat-input-container floatPlaceholder="auto" fxFlex="50">
-              <input matInput name="email" #email="ngModel" [(ngModel)]="mesario.email" type="email" placeholder="Email" pattern='\S+@\S+\.\S+'>
+            <mat-input-container floatPlaceholder="auto" fxFlex="33">
+              <input matInput name="email" #email="ngModel" [(ngModel)]="mesario.email" type="email" placeholder="Email" pattern='\S+@\S+\.\S+' required>
               <mat-error [hidden]="email.valid || (email.pristine && !vform.submitted)">
                 Digite um endereço de email válido.
               </mat-error>
             
             </mat-input-container>
 
-            <mat-input-container floatPlaceholder="auto" fxFlex="23">
+            <mat-input-container floatPlaceholder="auto" fxFlex="33">
 
-              <input matInput required [matDatepicker]="picker" [(ngModel)]="mesario.nascimento" name="dataNascimento" placeholder="Data de Nascimento" >
+              <input matInput required (blur)="checkValidDate($event.target.value)" [matDatepicker]="picker" [(ngModel)]="mesario.nascimento" name="dataNascimento" placeholder="Data de Nascimento" onkeyup="this.value=this.value.replace(/^(\d\d)(\d)$/g,'$1/$2').replace(/^(\d\d\/\d\d)(\d+)$/g,'$1/$2').replace(/[^\d\/]/g,'')" size=10 maxlength=10>
               <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
               <mat-datepicker #picker ></mat-datepicker>
 
               <mat-error [hidden]="picker.valid || (picker.pristine && !vform.submitted)">
-                Digite uma data válida 00/00/0000.
+                Digite uma data válida dd/mm/aaaa.
               </mat-error>
             </mat-input-container>
 
-            <mat-input-container floatPlaceholder="auto" fxFlex="24">
+            <mat-input-container floatPlaceholder="auto" fxFlex="33">
               <mat-select required name="grauDeInstituicao" placeholder="Grau de Instrução" [(ngModel)]="mesario.grauInstrucao">
                 <mat-option *ngFor="let grau of listGraudeInstituicao" [value]="grau.value">
                   {{grau.viewValue}}
@@ -110,9 +107,9 @@
           <!-- Dados Residenciais -->
 
           <!-- Desktop -->
-          <h3 matSubheader hide-xs hide-gt-xs show-gt-sm>Dados Residenciais</h3>
+          <!-- <h3 matSubheader hide-xs hide-gt-xs show-gt-sm>Dados Residenciais</h3> -->
           <!-- Mobile-->
-          <h3 matSubheader hide-gt-sm mat-icon-button>Dados Residenciais</h3>
+          <!-- <h3 matSubheader hide-gt-sm mat-icon-button>Dados Residenciais</h3> -->
 
           <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="20px" fxLayoutGap.xs="0px">
             <mat-input-container floatPlaceholder="auto" fxFlex="50">
@@ -132,18 +129,18 @@
           </div>
 
           <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="20px" fxLayoutGap.xs="0px">
-            <mat-input-container floatPlaceholder="auto" fxFlex="40">
+            <mat-input-container floatPlaceholder="auto" fxFlex="33">
               <input required matInput #endereco="ngModel"  (ngModelChange) ="toUpperEndereco($event)"  [ngModel]="mesario.endereco" name="endereco" type="text" placeholder="Endereço">
               <mat-error [hidden]="endereco.valid || (endereco.pristine && !vform.submitted)">
                 O Endereço é um campo obrigatório.
               </mat-error>
             </mat-input-container>
 
-            <mat-input-container floatPlaceholder="auto" fxFlex="30">
+            <mat-input-container floatPlaceholder="auto" fxFlex="33">
               <input matInput  (ngModelChange) ="toUpperComplemento($event)"  [ngModel]="mesario.complementoEndereco" name="complemento" type="text" placeholder="Complemento do Endereço">
             </mat-input-container>
 
-            <mat-input-container floatPlaceholder="auto" fxFlex="30">
+            <mat-input-container floatPlaceholder="auto" fxFlex="33">
               <input matInput  (ngModelChange) ="toUpperReferencia($event)"  [ngModel]="mesario.informacoesReferenciaEndereco" name="informacoesReferencia" type="text" placeholder="Informações de Referência">
             </mat-input-container>
           </div>
@@ -168,9 +165,9 @@
 
 
           <!-- Desktop -->
-          <h3 matSubheader hide-xs hide-gt-xs show-gt-sm>Dados Profissionais</h3>
+          <!-- <h3 matSubheader hide-xs hide-gt-xs show-gt-sm>Dados Profissionais</h3> -->
           <!-- Mobile-->
-          <h3 matSubheader hide-gt-sm mat-icon-button>Dados Profissionais</h3>
+          <!-- <h3 matSubheader hide-gt-sm mat-icon-button>Dados Profissionais</h3> -->
 
           <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="20px" fxLayoutGap.xs="0px" style="line-height: 3;">
             <span>Possui Experiência com Informática? *</span>

@@ -25,4 +25,5 @@ export class Mesario {
     secaoEleitoral?: string;
     localVotacao?: string;
     numlocalVotacao?: string;
+    emailZe?:string;
 }

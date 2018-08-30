@@ -8,4 +8,5 @@ export class Eleitor {
     numSecao?: string;
     localVotacao?: string;
     numLocalVocacao?: string;
+    emailZona?: string;
 }

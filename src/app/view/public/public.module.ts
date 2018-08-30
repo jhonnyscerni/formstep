@@ -1,7 +1,7 @@
 import { MesarioService } from './../../service/mesario.service';
 import { MenuLayoutComponent } from './../../@core/layout/menu-layout/menu-layout.component';
 import { PublicRoutes } from './public.routing';
-import { FormComponent } from './home/form/form.component';
+import { FormComponent, ConfirmaExclusao } from './home/form/form.component';
 import { HomeComponent } from './home/home.component';
 import { NgModule, LOCALE_ID } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -26,9 +26,11 @@ import {NgxMaskModule} from 'ngx-mask'
     NavListLayoutComponent,
     NavViewLayoutComponent,
     MenuLayoutComponent,
-    SuccessComponent 
+    SuccessComponent,
+    ConfirmaExclusao,
   ],
-  providers:[
+  entryComponents: [ConfirmaExclusao],
+  providers: [
     MesarioService,
     EleitorService,
     { provide: LOCALE_ID, useValue: 'pt-BR' },
